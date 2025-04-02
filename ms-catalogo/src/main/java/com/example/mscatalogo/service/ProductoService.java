@@ -1,6 +1,5 @@
 package com.example.mscatalogo.service;
 
-
 import com.example.mscatalogo.entity.Producto;
 
 import java.util.List;
@@ -12,4 +11,5 @@ public interface ProductoService {
     public Producto actualizar(Producto producto);
     public Optional<Producto> listarPorId(Integer id);
     public void eliminarPorId(Integer id);
+
 }

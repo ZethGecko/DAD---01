@@ -3,24 +3,32 @@ package com.example.mscatalogo.entity;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
+
 
 @Entity
+
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(nullable = false)
     private String nombre;
+
     @Column(nullable = false, unique = true)
     private String codigo;
-    private String descripcion;
+
     @Temporal(TemporalType.TIMESTAMP)
+    @Column(nullable = false)
     private Date fechaCreacion;
 
-    // Relación de ejemplo
+    @Column(nullable = false)
+    private Boolean estado;
+
     @ManyToOne
-    @JoinColumn(name = "categoria_id", nullable = false)
+    @JoinColumn(name = "categoria_id", nullable = false) // Clave foránea
     private Categoria categoria;
-    private Boolean activo;
 
     public Integer getId() {
         return id;
@@ -46,20 +54,20 @@ public class Producto {
         this.codigo = codigo;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
     public Date getFechaCreacion() {
         return fechaCreacion;
     }
 
     public void setFechaCreacion(Date fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
+    }
+
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
     }
 
     public Categoria getCategoria() {
@@ -70,26 +78,16 @@ public class Producto {
         this.categoria = categoria;
     }
 
-    public Boolean getActivo() {
-        return activo;
-    }
-
-    public void setActivo(Boolean activo) {
-        this.activo = activo;
-    }
-
-
-    public Producto() {
-    }
-
-    public Producto(Integer id, String nombre, String codigo, String descripcion, Date fechaCreacion, Categoria categoria, Boolean activo) {
+    public Producto(Integer id, String nombre, String codigo, Date fechaCreacion, Boolean estado, Categoria categoria) {
         this.id = id;
         this.nombre = nombre;
         this.codigo = codigo;
-        this.descripcion = descripcion;
         this.fechaCreacion = fechaCreacion;
+        this.estado = estado;
         this.categoria = categoria;
-        this.activo = activo;
+    }
+
+    public Producto() {
     }
 
     @Override
@@ -98,10 +96,9 @@ public class Producto {
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", codigo='" + codigo + '\'' +
-                ", descripcion='" + descripcion + '\'' +
                 ", fechaCreacion=" + fechaCreacion +
+                ", estado=" + estado +
                 ", categoria=" + categoria +
-                ", activo=" + activo +
                 '}';
     }
 }

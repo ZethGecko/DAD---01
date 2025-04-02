@@ -39,11 +39,9 @@ public class ProductoController {
         return productoService.actualizar(producto);
     }
 
-    // Eliminar una producto por ID
+    // Eliminar una Producto por ID
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable Integer id) {
         productoService.eliminarPorId(id);  // Usar eliminarPorId en lugar de eliminar
     }
-
-    //
 }
