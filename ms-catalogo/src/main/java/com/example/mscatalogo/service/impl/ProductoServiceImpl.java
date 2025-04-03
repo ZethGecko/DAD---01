@@ -6,6 +6,7 @@ import com.example.mscatalogo.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,4 +44,42 @@ public class ProductoServiceImpl implements ProductoService {
         productoRepository.deleteById(id);
     }
 
+    // Métodos de filtrado
+    @Override
+    public List<Producto> findByEstado(Boolean estado) {
+        return List.of();
+    }
+
+    @Override
+    public List<Producto> findByCodigo(String codigo) {
+        return List.of();
+    }
+
+    @Override
+    public List<Producto> findByNombreContaining(String nombre) {
+        return List.of();
+    }
+
+    @Override
+    public List<Producto> findByFechaCreacionBetween(Date fechaInicio, Date fechaFin) {
+        return List.of();
+    }
+
+
+    // Métodos de filtrado
+//    public List<Producto> filtrarPorEstado(Boolean estado) {
+//        return productoRepository.findByEstado((estado);
+//    }
+//
+//    public List<Producto> filtrarPorCodigo(String codigo) {
+//        return productoRepository.findByCodigo((codigo);
+//    }
+//
+//    public List<Producto> filtrarPorNombre(String nombre) {
+//        return productoRepository.findByNombreContaining((nombre);
+//    }
+//
+//    public List<Producto> filtrarPorFechaCreacion(Date fechaInicio, Date fechaFin) {
+//        return productoRepository.findByFechaCreacionBetween((fechaInicio, fechaFin);
+//    }
 }
