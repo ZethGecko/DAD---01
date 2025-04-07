@@ -44,27 +44,29 @@ public class ProductoServiceImpl implements ProductoService {
         productoRepository.deleteById(id);
     }
 
-    // Métodos de filtrado
+    public ProductoServiceImpl(ProductoRepository productoRepository) {
+        this.productoRepository = productoRepository;
+    }
+
     @Override
     public List<Producto> findByEstado(Boolean estado) {
-        return List.of();
+        return productoRepository.findByEstado(estado);
     }
 
     @Override
     public List<Producto> findByCodigo(String codigo) {
-        return List.of();
+        return productoRepository.findByCodigo(codigo);
     }
 
     @Override
     public List<Producto> findByNombreContaining(String nombre) {
-        return List.of();
+        return productoRepository.findByNombreContaining(nombre);
     }
 
     @Override
-    public List<Producto> findByFechaCreacionBetween(Date fechaInicio, Date fechaFin) {
-        return List.of();
+    public List<Producto> findByFechaCreacionBetween(Date fechaCreacionAfter, Date fechaCreacionBefore) {
+        return productoRepository.findByFechaCreacionBetween(fechaCreacionAfter, fechaCreacionBefore);
     }
-
 
     // Métodos de filtrado
 //    public List<Producto> filtrarPorEstado(Boolean estado) {
