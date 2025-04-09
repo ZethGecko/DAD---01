@@ -2,6 +2,9 @@ package com.example.mshistorialservice.entity;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
+@Entity
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,8 +15,7 @@ public class Usuario {
     private Integer telefono;
     private String contraseña;
     private String rol;
-    @Temporal(TemporalType.TIMESTAMP)
-    private String fechaCreacion;
+    private LocalDateTime fechaCreacion;
 
     public Integer getId() {
         return id;
@@ -71,11 +73,11 @@ public class Usuario {
         this.rol = rol;
     }
 
-    public String getFechaCreacion() {
+    public LocalDateTime getFechaCreacion() {
         return fechaCreacion;
     }
 
-    public void setFechaCreacion(String fechaCreacion) {
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
 
@@ -92,7 +94,7 @@ public class Usuario {
                 ", telefono=" + telefono +
                 ", contraseña='" + contraseña + '\'' +
                 ", rol='" + rol + '\'' +
-                ", fechaCreacion='" + fechaCreacion + '\'' +
+                ", fechaCreacion=" + fechaCreacion +
                 '}';
     }
 }
