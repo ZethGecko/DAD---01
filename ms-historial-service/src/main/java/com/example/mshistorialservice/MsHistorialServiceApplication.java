@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MsHistorialServiceApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(MsHistorialServiceApplication.class, args);
     }
 

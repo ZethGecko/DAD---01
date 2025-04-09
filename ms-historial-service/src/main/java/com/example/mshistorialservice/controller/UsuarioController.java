@@ -35,5 +35,4 @@ public class UsuarioController {
         usuarioService.eliminarPorId(id);
         return "Eliminacion Correcta";
     }
-
 }

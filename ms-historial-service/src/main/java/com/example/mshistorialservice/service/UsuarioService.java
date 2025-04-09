@@ -11,5 +11,4 @@ public interface UsuarioService {
     public Usuario actualizar(Usuario usuario);
     public Optional<Usuario> listarPorId(Integer id);
     public void eliminarPorId(Integer id);
-
 }
