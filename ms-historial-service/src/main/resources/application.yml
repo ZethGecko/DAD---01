@@ -7,3 +7,23 @@ spring:
     import: optional:configserver:http://root:password@localhost:7070
 
 #  ms-historial-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/ms_historial # URL de tu base de datos principal
+    username: usuario_historial
+    password: contraseña_historial
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    jpa:
+      hibernate:
+        ddl-auto: update # Puedes usar `none` si trabajas con un esquema existente
+      show-sql: true
+      database-platform: org.hibernate.dialect.MySQLDialect
+
+# Opcional: configuración para una conexión adicional
+additional-datasource:
+  catalogo:
+    url: jdbc:mysql://localhost:3306/ms_catalogo # URL de la base de datos de catálogo
+    username: usuario_catalogo
+    password: contraseña_catalogo
+    driver-class-name: com.mysql.cj.jdbc.Driver
