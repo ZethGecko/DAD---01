@@ -15,6 +15,10 @@ import java.util.Optional;
 public class ProductoController {
     @Autowired
     private ProductoService productoService;
+    @GetMapping()
+    public ResponseEntity<List<Producto>> list() {
+        return ResponseEntity.ok().body(productoService.listar());
+    }
 
     // Obtener todas las producto
     @RequestMapping

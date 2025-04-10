@@ -4,6 +4,7 @@ package com.example.mscatalogo.controller;
 import com.example.mscatalogo.entity.Categoria;
 import com.example.mscatalogo.service.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,6 +15,10 @@ import java.util.Optional;
 public class CategoriaController {
     @Autowired
     private CategoriaService categoriaService;
+    @GetMapping()
+    public ResponseEntity<List<Categoria>> list() {
+        return ResponseEntity.ok().body(categoriaService.listar());
+    }
 
     // Obtener todas las categorías
     @RequestMapping
