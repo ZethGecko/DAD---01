@@ -24,7 +24,7 @@ spring:
           predicates:
             - Path=/usuarios/**
         - id: ms-catalogo-service
-          uri: lb://ms-catalogo-service
+          uri: http://localhost:8081
           predicates:
             - Path=/categorias/**
             - Path=/productos/**
