@@ -16,9 +16,9 @@ public class Historial {
 
     private Integer montoPago;
 
-    @ManyToOne
-    @JoinColumn(name = "producto_id", nullable = false) // Clave foránea hacia Producto
-    private Producto producto;
+//    @ManyToOne
+//    @JoinColumn(name = "producto_id", nullable = false) // Clave foránea hacia Producto
+//    private Producto producto;
 
     private String accion; // Ejemplo: Describir la acción realizada
 
