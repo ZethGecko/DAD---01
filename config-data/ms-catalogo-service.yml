@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: ms-catalogo
+    name: ms-catalogo-service
 
   # CONEXION A BASE DE DATOS
   datasource:
