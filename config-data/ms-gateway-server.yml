@@ -19,15 +19,14 @@ spring:
         locator:
           enable: true
       routes:
+        - id: ms-historial-service
+          uri: lb://ms-historial-service
+          predicates:
+            - Path=/usuarios/**
         - id: ms-catalogo-service
           uri: lb://ms-catalogo-service
           predicates:
             - Path=/categorias/**
             - Path=/productos/**
 
-
-        - id: ms-historial-service
-          uri: lb://ms-historial-service
-          predicates:
-            - Path=/usuarios/**
 

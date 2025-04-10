@@ -1,7 +1,9 @@
 package com.example.mscatalogoservice.controller;
 
 
+import com.example.mscatalogoservice.entity.Categoria;
 import com.example.mscatalogoservice.entity.Producto;
+import com.example.mscatalogoservice.service.CategoriaService;
 import com.example.mscatalogoservice.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -20,8 +22,9 @@ public class ProductoController {
 
     // Obtener todas las producto
     @GetMapping
-    public List<Producto> listar() {
-        return productoService.listar();
+    //public List<Producto> listar() {return productoService.listar();}
+    public ResponseEntity<List<Producto>> list() {
+        return ResponseEntity.ok().body(productoService.listar());
     }
 
     // Obtener una producto por ID

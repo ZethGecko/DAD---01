@@ -6,7 +6,7 @@ spring:
   config:
     import: optional:configserver:http://root:password@localhost:7070
 
-eureka:
-  instance:
-    leaseRenewalIntervalInSeconds: 10  # Intervalo para enviar heartbeats a Eureka
-    leaseExpirationDurationInSeconds: 30
+#eureka:
+#  instance:
+#    leaseRenewalIntervalInSeconds: 10  # Intervalo para enviar heartbeats a Eureka
+#    leaseExpirationDurationInSeconds: 30

@@ -3,6 +3,7 @@ package com.example.mscatalogoservice.controller;
 import com.example.mscatalogoservice.entity.Categoria;
 import com.example.mscatalogoservice.service.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,10 +17,9 @@ public class CategoriaController {
 
     // Obtener todas las categorías
     @GetMapping
-    public List<Categoria> listar() {
-        return categoriaService.listar();
+    public ResponseEntity<List<Categoria>> listar() {
+        return ResponseEntity.ok().body(categoriaService.listar());
     }
-
     // Obtener una categoría por ID
     @RequestMapping("/{id}")
     public Optional<Categoria> buscar(@PathVariable Integer id) {
