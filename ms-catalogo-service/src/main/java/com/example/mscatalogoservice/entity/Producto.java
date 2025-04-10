@@ -26,9 +26,9 @@ public class Producto {
     @Column(nullable = false)
     private Boolean estado;
 
-    @ManyToOne
-    @JoinColumn(name = "categoria_id", nullable = false) // Clave foránea
-    private com.example.mscatalogoservice.entity.Categoria categoria;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "categoria_id", nullable = false)
+    private Categoria categoria;
 
     public Integer getId() {
         return id;

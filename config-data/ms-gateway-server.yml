@@ -28,5 +28,8 @@ spring:
           predicates:
             - Path=/categorias/**
             - Path=/productos/**
+          filters:
+            - StripPrefix=1
+
 
 
