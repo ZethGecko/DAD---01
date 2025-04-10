@@ -25,6 +25,7 @@ spring:
             - Path=/categorias/**
             - Path=/productos/**
 
+
         - id: ms-historial-service
           uri: lb://ms-historial-service
           predicates:
