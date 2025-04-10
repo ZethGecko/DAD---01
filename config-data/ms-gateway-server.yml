@@ -1,5 +1,5 @@
 server:
-  port: 8087
+  port: 8085
 
 
 eureka:
@@ -25,9 +25,8 @@ spring:
             - Path=/categorias/**
             - Path=/productos/**
 
-        - id: ms-pedido-service
-          uri: lb://ms-pedido-service
+        - id: ms-historial-service
+          uri: lb://ms-historial-service
           predicates:
-            - Path=/api/usuarios/**
-#            - Path=/api/productos/**
+            - Path=/usuarios/**
 
