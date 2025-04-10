@@ -19,7 +19,7 @@ public class ProductoController {
     private ProductoService productoService;
 
     // Obtener todas las producto
-    @RequestMapping
+    @GetMapping
     public List<Producto> listar() {
         return productoService.listar();
     }

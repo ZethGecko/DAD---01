@@ -1,4 +1,3 @@
-#ms-catalogo-service
 spring:
   application:
     name: ms-catalogo-service
@@ -6,3 +5,8 @@ spring:
     active: development
   config:
     import: optional:configserver:http://root:password@localhost:7070
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10  # Intervalo para enviar heartbeats a Eureka
+    leaseExpirationDurationInSeconds: 30

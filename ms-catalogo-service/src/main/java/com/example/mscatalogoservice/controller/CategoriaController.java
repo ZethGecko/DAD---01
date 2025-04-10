@@ -15,7 +15,7 @@ public class CategoriaController {
     private CategoriaService categoriaService;
 
     // Obtener todas las categorías
-    @RequestMapping
+    @GetMapping
     public List<Categoria> listar() {
         return categoriaService.listar();
     }
