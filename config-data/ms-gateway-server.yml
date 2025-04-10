@@ -24,12 +24,13 @@ spring:
           predicates:
             - Path=/usuarios/**
         - id: ms-catalogo-service
-          uri: http://localhost:8081
+          uri: lb://ms-catalogo-service
           predicates:
             - Path=/categorias/**
             - Path=/productos/**
-          filters:
-            - StripPrefix=1
 
-
+        - id: ms-pedido-service
+          uri: lb://ms-pedido-service
+          predicates:
+            - Path=/ofertas/**
 

@@ -20,28 +20,26 @@ public class CategoriaController {
     public ResponseEntity<List<Categoria>> listar() {
         return ResponseEntity.ok().body(categoriaService.listar());
     }
-    // Obtener una categoría por ID
+
+
     @RequestMapping("/{id}")
     public Optional<Categoria> buscar(@PathVariable Integer id) {
-        return categoriaService.listarPorId(id);  // Usar listarPorId en lugar de buscar
+        return categoriaService.buscar(id);
     }
 
-    // Crear una nueva categoría
     @PostMapping
     public Categoria guardar(@RequestBody Categoria categoria) {
+        System.out.println(categoria);
         return categoriaService.guardar(categoria);
     }
 
-    // Actualizar una categoría existente
     @PutMapping("/{id}")
     public Categoria actualizar(@PathVariable Integer id, @RequestBody Categoria categoria) {
-        categoria.setId(id);  // Asegúrate de que el ID esté actualizado
-        return categoriaService.actualizar(categoria);
+        return categoriaService.actualizar(id, categoria);
     }
 
-    // Eliminar una categoría por ID
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable Integer id) {
-        categoriaService.eliminarPorId(id);  // Usar eliminarPorId en lugar de eliminar
+        categoriaService.eliminar(id);
     }
 }
